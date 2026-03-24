@@ -1,4 +1,4 @@
-EX-21-POINTERS
+<img width="907" height="582" alt="image" src="https://github.com/user-attachments/assets/126cca9d-fa3a-4be3-bea7-95694f4cc19a" /><img width="907" height="582" alt="image" src="https://github.com/user-attachments/assets/49960c1b-33ac-47ff-8d0d-49c58f1f74b7" />EX-21-POINTERS
 # AIM:
 Write a C program to convert a 100.50 into 100 using pointer
 
@@ -155,19 +155,41 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 ## PROGRAM:
 ~~~
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int num_rows, len, i, j, k;
+    scanf("%s", str);
+    scanf("%d", &num_rows);
+    len = strlen(str);
+    for(i = 1; i <= num_rows; i++) {
+        int midpoint = (2 * num_rows - 1) / 2;
+        for(j = 0; j < (2 * num_rows - 1); j++) {
+            if(j >= midpoint - (i - 1) && j <= midpoint + (i - 1)) {
+                k = (j - (midpoint - (i - 1))) % len;
+                printf("%c", str[k]);
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+~~~
 
 
  ## OUTPUT
 
- 
+ <img width="872" height="580" alt="image" src="https://github.com/user-attachments/assets/d6329e12-6d04-48d8-b982-ffc212ed6fd1" />
+
+
 
 ## RESULT
 
 Thus the C program to String process executed successfully
  
-
- 
-.
 
 
 
@@ -191,8 +213,27 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+~~~
+#include <stdio.h>
+int main() {
+    int arr[10];
+    int *parr = arr;
+    int n = 6, i;
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", parr + i);
+    }
+    printf("The elements of the array are:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", *(parr + i));
+    }
+    printf("\n");
+    return 0;
+}
+~~~
 
 ## OUTPUT
+
 
  
 
